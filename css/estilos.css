@@ -26,10 +26,11 @@ body{
 
 h3{
     margin-bottom: 15px;
+    margin-top: 2em;
 }
 
 p{
-    padding: 0px 0px 30px 15px;
+    /* padding: 0px 0px 30px 15px; */
     font-weight: 300;
 }
 
@@ -110,8 +111,7 @@ header .textos-header{
 
 .picture1-EMG{
     margin-bottom: 50px;
-    align-items: center;
-    width: 80%;
+    /* width: 80%; */
 }
 
 .container-EMG{
