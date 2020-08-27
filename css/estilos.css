@@ -187,6 +187,7 @@ footer{
     header{
         background-position: center;
     }
+    /* Mechanical ventilation */
     .container-ventilator{
         flex-direction: column;
         justify-content: center;
@@ -199,7 +200,47 @@ footer{
     .ventilator .text{
         width: 90%;
     }
-
-
+    /* sEMG & Swallowing disorders*/
+    .picture1-EMG{
+        width: 100%;
+    }
+    .container-EMG{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .picture-EMG{
+        width: 60%;
+        box-shadow: 0 0 6px 0 rgba(0, 0, 0, .5);
+        margin-bottom: 2em;
+    }
+    .EMG .text{
+        width: 90%;
+    }
+    /* Myo-prosthetic */
+    .container-Myo-prosthetic{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .picture-Myo-prosthetic{
+        width: 90%;
+        box-shadow: 0 0 6px 0 rgba(0, 0, 0, .5);
+    }
+    .Myo-prosthetic .text{
+        width: 90%;
+    }
+    /* Footer */
+    .contenedor-footer{
+        /* display: flex;
+        width: 90%;
+        justify-content: space-evenly;
+        margin: auto;
+        padding-bottom: 50px;
+        border-bottom: 1px solid #ccc; */
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
 
 }
