@@ -187,4 +187,19 @@ footer{
     header{
         background-position: center;
     }
+    .container-ventilator{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .picture-ventilator{
+        width: 90%;
+        margin-bottom: 2em;
+    }
+    .ventilator .text{
+        width: 90%;
+    }
+
+
+
 }
