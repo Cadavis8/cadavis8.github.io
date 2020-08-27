@@ -182,3 +182,7 @@ footer{
     margin: 20px 0 0 0;
     color: #9e9797;
 }
+
+@media screen and (max-width:900px){
+    background-position: center;
+}
