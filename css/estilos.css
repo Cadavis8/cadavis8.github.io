@@ -121,7 +121,7 @@ header .textos-header{
 
 .picture-EMG{
     width: 33%;
-    box-shadow: 0 0 6px 0 rgba(0, 0, 0, .5);
+    /* box-shadow: 0 0 6px 0 rgba(0, 0, 0, .5); */
 }
 
 .EMG .text{
@@ -137,7 +137,7 @@ header .textos-header{
 
 .picture-Myo-prosthetic{
     width: 45%;
-    box-shadow: 0 0 6px 0 rgba(0, 0, 0, .5);
+    /* box-shadow: 0 0 6px 0 rgba(0, 0, 0, .5); */
 }
 
 .Myo-prosthetic .text{
@@ -220,7 +220,14 @@ footer{
         background-position: center;
     }
     header .textos-header{
-        width: 90%;
+        display: flex;
+        height: 430px;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        flex-direction: column;
+        text-align: center;
     }
     /* Mechanical ventilation */
     .container-ventilator{
