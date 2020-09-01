@@ -183,9 +183,44 @@ footer{
     color: #9e9797;
 }
 
+/* About me */
+
+.picture-1{
+    width: 48%;
+}
+
+.picture-2{
+    width: 48%;
+}
+
+.picture-3{
+    width: 48%;
+}
+
+/* Publications */
+
+.container-publications{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.picture-publications{
+    width: 40%;
+    height: 40%;
+    margin-top: 3em;
+}
+
+.publications .text-publications{
+    width: 50%;
+}
+
+/* ////////////////////////////////MOBILE///////////////////////////// */
 @media screen and (max-width:900px){
     header{
         background-position: center;
+    }
+    header .textos-header{
+        width: 90%;
     }
     /* Mechanical ventilation */
     .container-ventilator{
