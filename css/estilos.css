@@ -17,11 +17,13 @@ body{
 }
 
 .container_2{
-    padding: 2em 0;
+    padding: 1em 1em 1em 1em;
     width: 90%;
     max-width: 1000px;
     margin: auto;
     overflow: hidden;
+    background-color: #16222A;
+    margin-bottom: 1em;
 }
 
 .title{
@@ -194,16 +196,47 @@ footer{
 
 /* About me */
 
+.container2-ventilator{
+    display: flex;
+    justify-content: space-evenly;
+    background-color: #3A6073;
+}
 .picture-1{
     width: 48%;
 }
-
+.ventilator .text_about{
+    width: 48%;
+    margin-top: 2em;
+    font-size: 18px;
+    color: #fff;
+}
+.container2-EMG{
+    display: flex;
+    justify-content: space-evenly;
+    background-color: #3A6073;
+}
 .picture-2{
     width: 48%;
 }
-
+.EMG .text_about{
+    width: 48%;
+    margin-top: 2em;
+    font-size: 18px;
+    color: #fff;
+}
+.container2-Myo-prosthetic{
+    display: flex;
+    justify-content: space-evenly;
+    background-color: #3A6073;
+}
 .picture-3{
     width: 48%;
+}
+.Myo-prosthetic .text_about{
+    width: 48%;
+    margin-top: 2em;
+    font-size: 18px;
+    color: #fff;
 }
 
 /* Publications */
