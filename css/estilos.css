@@ -321,13 +321,37 @@ footer{
         align-items: center;
     }
     /* About me */
+    .container2-ventilator{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
     .picture-1{
         width: 90%;
+    }
+    .ventilator .text_about{
+        width: 90%;
+    }
+    .container2-EMG{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
     .picture-2{
         width: 90%;
     }
+    .EMG .text_about{
+        width: 90%;
+    }
+    .container2-Myo-prosthetic{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
     .picture-3{
+        width: 90%;
+    }
+    .Myo-prosthetic .text_about{
         width: 90%;
     }
 
