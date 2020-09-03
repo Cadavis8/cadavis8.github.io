@@ -263,7 +263,13 @@ footer{
     }
     nav{
         text-align: center;
-        padding: 30px 50px 0 0;
+        padding: 30px 0 0 0;
+    }
+    nav > a{
+        color: #fff;
+        font-weight: 700;
+        text-decoration: none;
+        margin-right: 10px;
     }
     /* Mechanical ventilation */
     .container-ventilator{
