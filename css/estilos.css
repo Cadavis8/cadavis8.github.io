@@ -261,16 +261,10 @@ footer{
     header{
         background-position: center;
     }
-    /* header .textos-header{
-        display: flex;
-        height: 430px;
-        width: 100%;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-        flex-direction: column;
+    nav{
         text-align: center;
-    } */
+        padding: 30px 50px 0 0;
+    }
     /* Mechanical ventilation */
     .container-ventilator{
         flex-direction: column;
