@@ -10,7 +10,7 @@ body{
 }
 
 .body-about{
-    background-color: #16222A;
+    background-color: #ffffff;
 }
 
 .container{
@@ -50,6 +50,14 @@ p{
     margin-bottom: 2em;
     font-weight: 300;
     /* color: #ffffff; */
+}
+
+.link{
+    color: yellowgreen;
+}
+
+.highlight{
+    color: orange;
 }
 
 /*///////////////////////////////////////////////////// Header /////////////////////////////////////////////////////*/
