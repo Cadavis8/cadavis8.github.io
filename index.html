@@ -1,91 +1,828 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="en" class="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Santiago Website</title>
-    <link rel="stylesheet" href="css/estilos.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
-    <link rel="manifest" href="img/site.webmanifest">
+    <title>Santiago Cadavid — Biomedical Engineer</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            cyan: '#00E5FF',
+                            emerald: '#10B981',
+                            blue: '#0284C7',
+                            navy: '#0A0F1D',
+                            darkCard: '#111827',
+                            lightBg: '#F8FAFC'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom Smooth Scroll & Futuristic Aesthetics */
+        html { scroll-behavior: smooth; }
+        .glass-nav {
+            background: rgba(10, 15, 29, 0.75);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .light .glass-nav {
+            background: rgba(255, 255, 255, 0.85);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+        }
+        .glass-card {
+            background: rgba(17, 24, 39, 0.6);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.07);
+        }
+        .light .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            border: 1px solid rgba(0, 0, 0, 0.08);
+        }
+        .circuit-bg {
+            background-image: radial-gradient(rgba(0, 229, 255, 0.08) 1px, transparent 0);
+            background-size: 24px 24px;
+        }
+        .light .circuit-bg {
+            background-image: radial-gradient(rgba(2, 132, 199, 0.08) 1px, transparent 0);
+        }
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 9999px; }
+        .light ::-webkit-scrollbar-thumb { background: #cbd5e1; }
+    </style>
 </head>
+<body class="bg-brand-navy text-slate-200 light:bg-brand-lightBg light:text-slate-800 font-sans transition-colors duration-300 min-h-screen flex flex-col circuit-bg antialiased">
 
-<body>
-    <header>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="projects.html">Projects</a>
-            <a href="https://cadavis8.github.io/CV_Santiago_Cadavid.pdf" target="_blank">CV</a>
-        </nav>
-        <section class="textos-header">
-            <h1>Santiago Cadavid</h1>
-            <h2>Biomedical Engineer</h2>
-        </section>
-        <div class="wave" style="height: 150px; overflow: hidden;"><svg viewBox="0 0 500 150" preserveAspectRatio="none"
-                style="height: 100%; width: 100%;">
-                <path d="M0.00,49.98 C149.99,150.00 349.20,-49.98 500.00,49.98 L500.00,150.00 L0.00,150.00 Z"
-                    style="stroke: none; fill: #16222A;"></path></svg>
+    <!-- Top Ambient Glow Gradient Background -->
+    <div class="fixed top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-96 bg-gradient-to-b from-cyan-500/10 via-emerald-500/5 to-transparent pointer-events-none blur-3xl rounded-full -z-10"></div>
+
+    <!-- Header Navigation -->
+    <header class="sticky top-0 z-40 w-full glass-nav transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                
+                <!-- Logo / Brand -->
+                <a href="#" onclick="switchTab('home')" class="group flex items-center space-x-3">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-cyan-500 to-emerald-400 flex items-center justify-center text-slate-950 font-bold text-lg shadow-lg shadow-cyan-500/20 group-hover:scale-105 transition-transform">
+                        SC
+                    </div>
+                    <div>
+                        <span class="font-bold text-lg tracking-tight text-white dark:text-white light:text-slate-900 block group-hover:text-brand-cyan transition-colors">
+                            Santiago Cadavid
+                        </span>
+                        <span class="text-[11px] font-mono text-cyan-400 light:text-cyan-700 tracking-wider uppercase block -mt-1">
+                            Biomedical Engineer
+                        </span>
+                    </div>
+                </a>
+
+                <!-- Desktop Tab Navigation -->
+                <nav class="hidden md:flex items-center space-x-1 lg:space-x-2 text-sm font-medium">
+                    <button onclick="switchTab('home')" id="nav-home" class="nav-tab px-3.5 py-2 rounded-lg text-cyan-400 bg-cyan-500/10 font-semibold transition-all flex items-center gap-2">
+                        <i data-lucide="user" class="w-4 h-4"></i> About
+                    </button>
+                    <button onclick="switchTab('projects')" id="nav-projects" class="nav-tab px-3.5 py-2 rounded-lg text-slate-300 light:text-slate-600 hover:text-white hover:bg-slate-800/50 light:hover:bg-slate-200 transition-all flex items-center gap-2">
+                        <i data-lucide="cpu" class="w-4 h-4"></i> Projects
+                    </button>
+                    <button onclick="switchTab('publications')" id="nav-publications" class="nav-tab px-3.5 py-2 rounded-lg text-slate-300 light:text-slate-600 hover:text-white hover:bg-slate-800/50 light:hover:bg-slate-200 transition-all flex items-center gap-2">
+                        <i data-lucide="file-text" class="w-4 h-4"></i> Publications
+                    </button>
+                    <button onclick="switchTab('experience')" id="nav-experience" class="nav-tab px-3.5 py-2 rounded-lg text-slate-300 light:text-slate-600 hover:text-white hover:bg-slate-800/50 light:hover:bg-slate-200 transition-all flex items-center gap-2">
+                        <i data-lucide="briefcase" class="w-4 h-4"></i> CV & Experience
+                    </button>
+                </nav>
+
+                <!-- Action Controls (Theme Switcher & Contact CV) -->
+                <div class="flex items-center space-x-3">
+                    <button onclick="toggleTheme()" class="p-2.5 rounded-xl border border-slate-800 light:border-slate-200 bg-slate-900/60 light:bg-white text-slate-300 light:text-slate-700 hover:text-cyan-400 transition" aria-label="Toggle Dark/Light Mode">
+                        <i data-lucide="sun" class="w-4 h-4 hidden dark:block text-amber-400"></i>
+                        <i data-lucide="moon" class="w-4 h-4 block dark:hidden text-slate-700"></i>
+                    </button>
+                    
+                    <a href="https://cadavis8.github.io/CV_Santiago_Cadavid.pdf" target="_blank" class="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-bold font-mono bg-gradient-to-r from-cyan-500 to-emerald-500 text-slate-950 hover:opacity-90 transition shadow-md shadow-cyan-500/10">
+                        <i data-lucide="download" class="w-3.5 h-3.5"></i> Download CV
+                    </a>
+
+                    <button onclick="toggleMobileMenu()" class="md:hidden p-2 rounded-xl bg-slate-900 border border-slate-800 text-slate-300">
+                        <i data-lucide="menu" class="w-5 h-5"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div id="mobileMenu" class="hidden md:hidden border-t border-slate-800/80 bg-brand-navy/95 px-4 pt-3 pb-5 space-y-2 text-sm font-medium">
+            <button onclick="switchTab('home')" class="w-full text-left px-3 py-2.5 rounded-lg text-cyan-400 bg-slate-800/50 flex items-center gap-2">
+                <i data-lucide="user" class="w-4 h-4"></i> About
+            </button>
+            <button onclick="switchTab('projects')" class="w-full text-left px-3 py-2.5 rounded-lg text-slate-300 flex items-center gap-2">
+                <i data-lucide="cpu" class="w-4 h-4"></i> Projects
+            </button>
+            <button onclick="switchTab('publications')" class="w-full text-left px-3 py-2.5 rounded-lg text-slate-300 flex items-center gap-2">
+                <i data-lucide="file-text" class="w-4 h-4"></i> Research & Publications
+            </button>
+            <button onclick="switchTab('experience')" class="w-full text-left px-3 py-2.5 rounded-lg text-slate-300 flex items-center gap-2">
+                <i data-lucide="briefcase" class="w-4 h-4"></i> CV & Experience
+            </button>
+            <a href="https://cadavis8.github.io/CV_Santiago_Cadavid.pdf" target="_blank" class="block w-full text-center py-2.5 rounded-lg bg-cyan-500 text-slate-950 font-bold text-xs font-mono mt-2">
+                Download Official CV (PDF)
+            </a>
         </div>
     </header>
 
-    <main>
-        <section class="container_2 ventilator">
-            <div class="container2-ventilator">
-                <img src="img/artificial_intelligence.png" alt="" class="picture-1">
-                <div class="text_about">
-                    <!-- <h3>Title</h3> -->
-                    <p>I am a <b class="highlight">Biomedical Engineer</b> with experience measuring, acquiring and processing human physiological signals, controlling environmental variables in hospital sensors and installing, calibrating, repairing and inspecting medical equipment. I have a good understanding of a wide range of medical devices, electronics principles and medical concepts, which allow me to liaise between the clinical personnel and engineers making me an influential member of cross-functional teams. On top of my technical background, I have a general understanding of ICT management and digital transformation at a corporate level with an emphasis on innovation and marketing due to my recent studies in <b class="highlight"> Technology Management</b>.
-                    </p> <br>
-                    <p>A bit about me is that I enjoy learning the working principle of everything, which is why I like to read about physics and science. I enjoy writing code to build electronics projects and printing my designs on my 3D printer in my free time.</p>
+    <!-- Main Container -->
+    <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 space-y-12">
+
+        <!-- Tab 1: HOME / ABOUT -->
+        <section id="tab-home" class="tab-content space-y-12">
+            
+            <!-- Hero Section -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                <div class="lg:col-span-7 space-y-6">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-xs font-mono">
+                        <span class="w-2 h-2 rounded-full bg-cyan-400 animate-ping"></span>
+                        <span>Based in Christchurch, New Zealand 🇳🇿</span>
+                    </div>
+
+                    <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-white light:text-slate-900 leading-tight">
+                        Regional Manager | <span class="bg-gradient-to-r from-cyan-400 via-emerald-400 to-blue-500 bg-clip-text text-transparent">Biomedical</span> Engineering Services
+                    </h1>
+
+                    <p class="text-slate-300 light:text-slate-600 text-base sm:text-lg leading-relaxed">
+                        As Regional Manager, I combine my background in <strong class="text-white light:text-slate-900">Biomedical Engineering</strong> and <strong class="text-white light:text-slate-900">Technology Management</strong> to lead technical teams across the South Island. My role focuses on ensuring the safe, reliable, and compliant performance of medical equipment in healthcare environments while supporting healthcare professionals through equipment training and technical guidance.
+                    </p>
+
+                    <!-- Quick Details Info Grid -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2 text-xs font-mono text-slate-400">
+                        <div class="flex items-center gap-2.5 p-3 rounded-xl glass-card">
+                            <i data-lucide="shield-check" class="w-4 h-4 text-emerald-400"></i>
+                            <span>Credential ID: <strong class="text-white light:text-slate-900">Electrical Appliance Serviceperson (EAS) / EW154510</strong></span>
+                        </div>
+                        <div class="flex items-center gap-2.5 p-3 rounded-xl glass-card">
+                            <i data-lucide="activity" class="w-4 h-4 text-cyan-400"></i>
+                            <span>Specialty: <strong class="text-white light:text-slate-900">Postgraduate Diploma in Science in Medical Physics</strong></span>
+                        </div>
+                    </div>
+
+                    <!-- Contact & CTA Buttons -->
+                    <div class="flex flex-wrap items-center gap-4 pt-2">
+                        <button onclick="copyContact('santiago.cadavid94@gmail.com', 'Email address copied!')" class="px-5 py-3 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold text-xs uppercase tracking-wider font-mono flex items-center gap-2 transition shadow-lg shadow-cyan-500/20">
+                            <i data-lucide="mail" class="w-4 h-4"></i> Copy Email
+                        </button>
+                        <button onclick="switchTab('projects')" class="px-5 py-3 rounded-xl border border-slate-700 light:border-slate-300 hover:border-cyan-400 text-slate-200 light:text-slate-700 hover:text-cyan-400 font-bold text-xs uppercase tracking-wider font-mono flex items-center gap-2 transition">
+                            <i data-lucide="code" class="w-4 h-4"></i> Explore Projects
+                        </button>
+                        <a href="https://linkedin.com/in/santiago-cadavis" target="_blank" class="p-3 rounded-xl border border-slate-800 light:border-slate-200 text-slate-400 hover:text-cyan-400 transition" title="LinkedIn Profile">
+                            <i data-lucide="linkedin" class="w-4 h-4"></i> LinkedIn
+                        </a>
+                        <!-- <a href="https://cadavis8.github.io/" target="_blank" class="p-3 rounded-xl border border-slate-800 light:border-slate-200 text-slate-400 hover:text-cyan-400 transition" title="GitHub Repository">
+                            <i data-lucide="github" class="w-4 h-4"></i>
+                        </a> -->
+                    </div>
+                </div>
+
+                <!-- Interactive Bio-Signal Canvas Simulator Widget -->
+                <div class="lg:col-span-5 glass-card p-6 rounded-3xl space-y-4 border border-cyan-500/20 relative overflow-hidden">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-2">
+                            <i data-lucide="activity" class="w-4 h-4 text-cyan-400"></i>
+                            <span class="text-xs font-mono font-bold text-slate-200 light:text-slate-800 uppercase tracking-wider">Live Signal Processing Simulator</span>
+                        </div>
+                        <span id="waveTypeLabel" class="text-[10px] font-mono px-2 py-0.5 rounded bg-cyan-500/20 text-cyan-300">sEMG Burst</span>
+                    </div>
+
+                    <!-- Canvas Box -->
+                    <div class="relative bg-slate-950 rounded-2xl p-2 border border-slate-800">
+                        <canvas id="signalCanvas" width="500" height="180" class="w-full h-44 rounded-xl"></canvas>
+                        <!-- Grid Overlay Lines -->
+                        <div class="absolute inset-0 pointer-events-none border border-cyan-500/10 rounded-2xl"></div>
+                    </div>
+
+                    <!-- Simulator Controls -->
+                    <div class="grid grid-cols-3 gap-2">
+                        <button onclick="setWaveform('semg')" id="btn-semg" class="wave-btn px-2.5 py-1.5 rounded-lg bg-cyan-500 text-slate-950 text-[11px] font-mono font-bold transition">sEMG Signals</button>
+                        <button onclick="setWaveform('ecg')" id="btn-ecg" class="wave-btn px-2.5 py-1.5 rounded-lg bg-slate-800 text-slate-300 hover:text-white text-[11px] font-mono transition">ECG Pulse</button>
+                        <button onclick="setWaveform('ventilator')" id="btn-ventilator" class="wave-btn px-2.5 py-1.5 rounded-lg bg-slate-800 text-slate-300 hover:text-white text-[11px] font-mono transition">Ventilator Flow</button>
+                    </div>
+                    <p class="text-[11px] text-slate-400 light:text-slate-500 leading-normal">
+                        Simulating real-time biological transducers and filter response (50Hz band-stop + discrete wavelet transform).
+                    </p>
                 </div>
             </div>
-        </section>
-        <section class="container_2 EMG">
-            <div class="container2-EMG">
-                <div class="text_about">
-                    <!-- <h3>Title</h3> -->
-                    <p>I did my <b class="highlight">bachelor's degree in Biomedical Engineering</b> at the Metropolitan Institute of Technology in Medellín, Colombia. During my undergraduate study, I had the incredible opportunity to teach two courses: Electromagnetic Physics and Bioinstrumentation. At that time, I discovered I had a huge passion and an innate talent for teaching.</p> <br>
-                    <p>Also, I developed a wide variety of projects for different subjects like a myoelectric controlled prosthesis (Bioinstrumentation paper), an electric wheelchair tongue-based control for quadriplegia patients (Rehabilitation Engineering paper), an ECG wave simulator software (Sensors paper), a neonatal incubator simulator device (Medical Device Design paper), etc.</p>
-                    <p>During my last undergraduate year, I was part of <b class="highlight">Gi2B</b>, developing a research project sponsored by <b class="highlight">COLCIENCIAS</b> whose aim was to design and create diagnostic software for the detection of swallowing disorders using sEMG and Machine Learning. </p>
-                    <p>To know more about Gi2B Research Group click <a class="link" href="https://www.itm.edu.co/investigacion/grupos-de-investigacion/investigacion-e-innovacion-biomedicas/linea-ciencias-ingenieriles-biomedicas/" target="_blank">here</a>.</p>
+
+            <!-- Profile Narrative Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-6">
+                
+                <div class="glass-card p-6 rounded-2xl space-y-3 border-t-2 border-t-cyan-400">
+                    <div class="w-10 h-10 rounded-xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center">
+                        <i data-lucide="stethoscope" class="w-5 h-5"></i>
+                    </div>
+                    <h3 class="font-bold text-lg text-white light:text-slate-900">Field Engineering</h3>
+                    <p class="text-xs text-slate-400 light:text-slate-600 leading-relaxed">
+                        Extensive hands-on experience in clinical environments (BV Medical, New Zealand), performing preventive maintenance, performance assurance, electrical safety testing, and troubleshooting critical medical hardware.
+                    </p>
                 </div>
-                <img src="img/graduation.png" alt="" class="picture-2">
+
+                <div class="glass-card p-6 rounded-2xl space-y-3 border-t-2 border-t-emerald-400">
+                    <div class="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center">
+                        <i data-lucide="cpu" class="w-5 h-5"></i>
+                    </div>
+                    <h3 class="font-bold text-lg text-white light:text-slate-900">Previous Work Expecirence</h3>
+                    <p class="text-xs text-slate-400 light:text-slate-600 leading-relaxed">
+                        Embedded Hardware & Telemetry: Proficient with open-source microcontroller prototyping (Arduino, STM32), custom PCB design, 3D mechanical modeling (Fusion 360), and hospital enviroment sensor telemetry (temperature, dew point, gas concentration).
+                    </p>
+                </div>
+
+                <div class="glass-card p-6 rounded-2xl space-y-3 border-t-2 border-t-blue-500">
+                    <div class="w-10 h-10 rounded-xl bg-blue-500/10 text-blue-400 flex items-center justify-center">
+                        <i data-lucide="graduation-cap" class="w-5 h-5"></i>
+                    </div>
+                    <h3 class="font-bold text-lg text-white light:text-slate-900">Research & Academic</h3>
+                    <p class="text-xs text-slate-400 light:text-slate-600 leading-relaxed">
+                        Former research fellow at ITM (GI2B group), investigating swallowing disorder diagnosis with sEMG & Machine Learning. Holds a Diploma in Technology Management and a Postgraduate Diploma in Science in Medical Physics, both from New Zealand.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Tab 2: PROJECTS -->
+        <section id="tab-projects" class="tab-content hidden space-y-8">
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+                <div>
+                    <h2 class="text-2xl sm:text-3xl font-extrabold text-white light:text-slate-900">Engineering & Biomedical Projects</h2>
+                    <p class="text-xs sm:text-sm text-slate-400">Innovative medical hardware, signal analysis software, and open-source prototypes.</p>
+                </div>
+
+                <!-- Project Filter Tags -->
+                <div class="flex items-center space-x-2 overflow-x-auto pb-2 text-xs font-mono">
+                    <button onclick="filterProjects('all')" class="proj-filter active px-3 py-1.5 rounded-lg bg-cyan-500 text-slate-950 font-bold transition">All</button>
+                    <button onclick="filterProjects('signal')" class="proj-filter px-3 py-1.5 rounded-lg bg-slate-800 light:bg-slate-200 text-slate-300 light:text-slate-700 transition">Signal Processing</button>
+                    <button onclick="filterProjects('hardware')" class="proj-filter px-3 py-1.5 rounded-lg bg-slate-800 light:bg-slate-200 text-slate-300 light:text-slate-700 transition">Hardware & 3D</button>
+                    <button onclick="filterProjects('clinical')" class="proj-filter px-3 py-1.5 rounded-lg bg-slate-800 light:bg-slate-200 text-slate-300 light:text-slate-700 transition">Clinical/Simulation</button>
+                </div>
+            </div>
+
+            <!-- Projects Grid Cards -->
+            <div id="projectsGrid" class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                
+                <!-- Project 1: MATLAB Mechanical Ventilator -->
+                <div class="project-card glass-card rounded-2xl overflow-hidden border border-slate-800 light:border-slate-200 hover:border-cyan-500/50 transition group flex flex-col justify-between" data-category="clinical">
+                    <div>
+                        <div class="h-44 bg-gradient-to-br from-slate-900 to-slate-800 p-6 relative overflow-hidden flex items-center justify-center">
+                            <i data-lucide="wind" class="w-16 h-16 text-cyan-400/40 group-hover:scale-110 transition-transform"></i>
+                            <span class="absolute top-3 right-3 px-2 py-0.5 rounded bg-cyan-500/20 text-cyan-300 text-[10px] font-mono">MATLAB Simulation</span>
+                        </div>
+                        <div class="p-6 space-y-3">
+                            <h3 class="font-bold text-lg text-white light:text-slate-900 group-hover:text-cyan-400 transition-colors">
+                                Mechanical Ventilator Simulator (LungLife)
+                            </h3>
+                            <p class="text-xs text-slate-400 light:text-slate-600 line-clamp-3 leading-relaxed">
+                                Developed during COVID-19 with a non-profit cross-functional team (LungLife). Built a MATLAB simulator modeling Volume Control Ventilation (VCV), calculating real-time pressure, airflow, and volume parameters to assist clinical decision-making.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0 flex items-center justify-between">
+                        <span class="text-[10px] font-mono text-slate-500">MATLAB • Bio-Fluid Mechanics</span>
+                        <button onclick="openProjectModal('ventilator')" class="text-xs font-mono font-bold text-cyan-400 hover:underline flex items-center gap-1">
+                            Details <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Project 2: Swallowing Disorders sEMG -->
+                <div class="project-card glass-card rounded-2xl overflow-hidden border border-slate-800 light:border-slate-200 hover:border-cyan-500/50 transition group flex flex-col justify-between" data-category="signal">
+                    <div>
+                        <div class="h-44 bg-gradient-to-br from-slate-900 to-slate-800 p-6 relative overflow-hidden flex items-center justify-center">
+                            <i data-lucide="activity" class="w-16 h-16 text-emerald-400/40 group-hover:scale-110 transition-transform"></i>
+                            <span class="absolute top-3 right-3 px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 text-[10px] font-mono">COLCIENCIAS Sponsored</span>
+                        </div>
+                        <div class="p-6 space-y-3">
+                            <h3 class="font-bold text-lg text-white light:text-slate-900 group-hover:text-emerald-400 transition-colors">
+                                sEMG Swallowing Disorder Diagnostics
+                            </h3>
+                            <p class="text-xs text-slate-400 light:text-slate-600 line-clamp-3 leading-relaxed">
+                                Research project with the GI2B research group acquiring surface electromyography (sEMG) from 700+ subjects using PowerLab hardware. Utilized discrete wavelet transform and machine learning classifiers to automate burst detection in infrahyoid muscles.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0 flex items-center justify-between">
+                        <span class="text-[10px] font-mono text-slate-500">PowerLab • Wavelet Analysis</span>
+                        <button onclick="openProjectModal('semg')" class="text-xs font-mono font-bold text-emerald-400 hover:underline flex items-center gap-1">
+                            Details <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Project 3: 3D Printed Myoelectric Prosthesis -->
+                <div class="project-card glass-card rounded-2xl overflow-hidden border border-slate-800 light:border-slate-200 hover:border-cyan-500/50 transition group flex flex-col justify-between" data-category="hardware">
+                    <div>
+                        <div class="h-44 bg-gradient-to-br from-slate-900 to-slate-800 p-6 relative overflow-hidden flex items-center justify-center">
+                            <i data-lucide="hand" class="w-16 h-16 text-blue-400/40 group-hover:scale-110 transition-transform"></i>
+                            <span class="absolute top-3 right-3 px-2 py-0.5 rounded bg-blue-500/20 text-blue-300 text-[10px] font-mono">Arduino & 3D Print</span>
+                        </div>
+                        <div class="p-6 space-y-3">
+                            <h3 class="font-bold text-lg text-white light:text-slate-900 group-hover:text-blue-400 transition-colors">
+                                3D Printed Myoelectric Prosthetic Hand
+                            </h3>
+                            <p class="text-xs text-slate-400 light:text-slate-600 line-clamp-3 leading-relaxed">
+                                Built an operational robotic prosthesis designed with Fusion 360, 3D printed, and controlled in real-time via Arduino microcontrollers paired with a commercial Myo gesture sEMG armband for educational workshops.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0 flex items-center justify-between">
+                        <span class="text-[10px] font-mono text-slate-500">Arduino • Fusion 360 • sEMG</span>
+                        <button onclick="openProjectModal('prosthesis')" class="text-xs font-mono font-bold text-blue-400 hover:underline flex items-center gap-1">
+                            Details <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                        </button>
+                    </div>
+                </div>
+
             </div>
         </section>
-        <section class="container_2 Myo-prosthetic">
-            <div class="container2-Myo-prosthetic">
-                <img src="img/focused_working.png" width="100%" height="auto" alt="" class="picture-3">
-                <div class="text_about">
-                    <!-- <h3>Title</h3> -->
-                    <p>I am currently working in the Medical Device industry as a <b class="highlight">Biomedical Engineer</b>, performing preventive/scheduled maintenance on medical devices and installing, calibrating, repairing and inspecting medical equipment in medical centres around New Zealand.</p> <br>
-                    <p>Previously, I worked as a Field Service Engineer for a company where my key responsibilities were designing, building and installing telemetric sensor systems for hospitals and clinical laboratories. Consequently, I had to contact the engineer teams of different hospitals around the metropolitan area, which helped me develop personal relationships and communication skills.</p> <br>
-                    <p>During the pandemic caused by Covid-19 in 2020, I collaborated with a small non-profit organization, where a cross-functional team of talented professionals aimed to develop a low-cost prototype of a mechanical ventilation system.</p>
-                    <p>My <a class="link" href="https://cadavis8.github.io/CV_Santiago_Cadavid.pdf" target="_blank">CV</a> is here if you wish to have a look.</p>
+
+        <!-- Tab 3: PUBLICATIONS -->
+        <section id="tab-publications" class="tab-content hidden space-y-8">
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-slate-800 light:border-slate-200 pb-6">
+                <div>
+                    <h2 class="text-2xl sm:text-3xl font-extrabold text-white light:text-slate-900">Academic & Research Publications</h2>
+                    <p class="text-xs sm:text-sm text-slate-400">Peer-reviewed conference proceedings and journal articles in biomedical signal characterization.</p>
+                </div>
+                <!-- Search Filter Bar -->
+                <div class="relative w-full md:w-72">
+                    <i data-lucide="search" class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-500"></i>
+                    <input type="text" id="pubSearchInput" onkeyup="filterPublications()" placeholder="Search paper title, DOI or year..." class="w-full pl-9 pr-4 py-2 text-xs bg-slate-900 light:bg-white border border-slate-800 light:border-slate-300 rounded-xl text-slate-200 light:text-slate-800 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-cyan-500">
                 </div>
             </div>
+
+            <!-- Publications List Container -->
+            <div id="publicationsList" class="space-y-4">
+                
+                <!-- Pub 1 -->
+                <div class="pub-item glass-card p-6 rounded-2xl space-y-3 border-l-4 border-l-cyan-400">
+                    <div class="flex items-center justify-between text-xs font-mono text-slate-400">
+                        <span class="px-2.5 py-0.5 rounded bg-cyan-500/10 text-cyan-400 font-bold">Journal Article (2017)</span>
+                        <span>ISSN: 1050-6411</span>
+                    </div>
+                    <h3 class="font-bold text-base sm:text-lg text-white light:text-slate-900">
+                        Improving surface EMG burst detection in infrahyoid muscles during swallowing using digital filters and discrete wavelet analysis
+                    </h3>
+                    <p class="text-xs text-slate-400 light:text-slate-600">
+                        <strong class="text-slate-300 light:text-slate-700">Restrepo-Agudelo, Sebastian; Cadavid-Arboleda, Santiago et al.</strong> — <em>Journal of Electromyography and Kinesiology (JEK)</em>, Vol. 35, pp. 1-8.
+                    </p>
+                    <div class="flex items-center space-x-4 pt-2 text-xs font-mono">
+                        <a href="https://doi.org/10.1016/j.jelekin.2017.05.001" target="_blank" class="text-cyan-400 hover:underline flex items-center gap-1">
+                            <i data-lucide="external-link" class="w-3.5 h-3.5"></i> DOI: 10.1016/j.jelekin.2017.05.001
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Pub 2 -->
+                <div class="pub-item glass-card p-6 rounded-2xl space-y-3 border-l-4 border-l-emerald-400">
+                    <div class="flex items-center justify-between text-xs font-mono text-slate-400">
+                        <span class="px-2.5 py-0.5 rounded bg-emerald-500/10 text-emerald-400 font-bold">CLAIB Proceedings (2016)</span>
+                        <span>Bucaramanga, Colombia</span>
+                    </div>
+                    <h3 class="font-bold text-base sm:text-lg text-white light:text-slate-900">
+                        Assessment of Surface Electromyography During Orofacial Praxis in Healthy Subjects
+                    </h3>
+                    <p class="text-xs text-slate-400 light:text-slate-600">
+                        <strong class="text-slate-300 light:text-slate-700">Cadavid-Arboleda, Santiago et al.</strong> — <em>VII Latin American Congress on Biomedical Engineering CLAIB 2016</em>, Springer, pp. 165-168.
+                    </p>
+                    <div class="flex items-center space-x-4 pt-2 text-xs font-mono">
+                        <a href="http://link.springer.com/10.1007/978-981-10-4086-3" target="_blank" class="text-emerald-400 hover:underline flex items-center gap-1">
+                            <i data-lucide="external-link" class="w-3.5 h-3.5"></i> DOI: 10.1007/978-981-10-4086-3
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Pub 3 -->
+                <div class="pub-item glass-card p-6 rounded-2xl space-y-3 border-l-4 border-l-blue-500">
+                    <div class="flex items-center justify-between text-xs font-mono text-slate-400">
+                        <span class="px-2.5 py-0.5 rounded bg-blue-500/10 text-blue-400 font-bold">CLAIB Proceedings (2016)</span>
+                        <span>Bucaramanga, Colombia</span>
+                    </div>
+                    <h3 class="font-bold text-base sm:text-lg text-white light:text-slate-900">
+                        Surface Electromyographic Characterization of Five Orofacial Ideomotor Praxis in 20 Healthy Individuals
+                    </h3>
+                    <p class="text-xs text-slate-400 light:text-slate-600">
+                        <strong class="text-slate-300 light:text-slate-700">Cantillo-Mackenzie, German; Cadavid-Arboleda, Santiago et al.</strong> — <em>VII Latin American Congress on Biomedical Engineering CLAIB 2016</em>, Springer, pp. 221-224.
+                    </p>
+                    <div class="flex items-center space-x-4 pt-2 text-xs font-mono">
+                        <a href="http://link.springer.com/10.1007/978-981-10-4086-3" target="_blank" class="text-blue-400 hover:underline flex items-center gap-1">
+                            <i data-lucide="external-link" class="w-3.5 h-3.5"></i> DOI: 10.1007/978-981-10-4086-3
+                        </a>
+                    </div>
+                </div>
+
+            </div>
         </section>
+
+        <!-- Tab 4: CV & EXPERIENCE -->
+        <section id="tab-experience" class="tab-content hidden space-y-12">
+            
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+                
+                <!-- Career Timeline (7 Cols) -->
+                <div class="lg:col-span-7 space-y-6">
+                    <h2 class="text-2xl font-extrabold text-white light:text-slate-900 flex items-center gap-2">
+                        <i data-lucide="history" class="w-5 h-5 text-cyan-400"></i> Career History
+                    </h2>
+
+                    <!-- Experience Timeline Nodes -->
+                    <div class="relative border-l-2 border-slate-800 light:border-slate-300 ml-3 pl-6 space-y-8">
+                        
+                        <!-- Role 1 -->
+                        <div class="relative group">
+                            <div class="absolute -left-[31px] top-1.5 w-4 h-4 rounded-full bg-cyan-400 border-4 border-brand-navy light:border-brand-lightBg"></div>
+                            <div class="glass-card p-6 rounded-2xl space-y-2">
+                                <div class="flex flex-wrap items-center justify-between gap-1 text-xs font-mono">
+                                    <span class="text-cyan-400 font-bold">October 2020 — Present</span>
+                                    <span class="text-slate-400">Christchurch, NZ 🇳🇿</span>
+                                </div>
+                                <h3 class="font-bold text-lg text-white light:text-slate-900">Regional Manager / Biomedical Engineer</h3>
+                                <p class="text-xs font-mono text-slate-400">BV Medical</p>
+                                <ul class="text-xs text-slate-300 light:text-slate-600 space-y-1.5 pt-2 list-disc list-inside leading-relaxed">
+                                    <li>Performs preventive maintenance, equipment calibrations, and electrical safety testing on complex clinical systems across regional medical centers.</li>
+                                    <li>Instructs clinical staff on proper operation, safe handling, and basic maintenance procedures for critical devices.</li>
+                                    <li>Executes component-level equipment diagnostics using specialized test instrumentation and software revisions.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Role 2 -->
+                        <div class="relative group">
+                            <div class="absolute -left-[31px] top-1.5 w-4 h-4 rounded-full bg-slate-700 border-4 border-brand-navy"></div>
+                            <div class="glass-card p-6 rounded-2xl space-y-2">
+                                <div class="flex flex-wrap items-center justify-between gap-1 text-xs font-mono">
+                                    <span class="text-slate-400 font-bold">August 2018 — October 2020</span>
+                                    <span class="text-slate-400">New Zealand</span>
+                                </div>
+                                <h3 class="font-bold text-lg text-white light:text-slate-900">Assistant Manager</h3>
+                                <p class="text-xs font-mono text-slate-400">MK RD Limited</p>
+                                <p class="text-xs text-slate-300 light:text-slate-600 leading-relaxed">
+                                    Assisted operational oversight, inventory management, and technical compliance in a commercial setting while pursuing technology management studies.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Role 3 -->
+                        <div class="relative group">
+                            <div class="absolute -left-[31px] top-1.5 w-4 h-4 rounded-full bg-emerald-400 border-4 border-brand-navy"></div>
+                            <div class="glass-card p-6 rounded-2xl space-y-2">
+                                <div class="flex flex-wrap items-center justify-between gap-1 text-xs font-mono">
+                                    <span class="text-emerald-400 font-bold">January 2017 — June 2017</span>
+                                    <span class="text-slate-400">Auckland, NZ & Colombia</span>
+                                </div>
+                                <h3 class="font-bold text-lg text-white light:text-slate-900">Field Service Engineer</h3>
+                                <p class="text-xs font-mono text-slate-400">Iforware S.A.S.</p>
+                                <ul class="text-xs text-slate-300 light:text-slate-600 space-y-1.5 pt-2 list-disc list-inside leading-relaxed">
+                                    <li>Designed and assembled micro-controller hardware (Arduino, custom PCBs) and telemetry sensors (temperature, dew point, humidity, gas concentration) for hospital and laboratory telemetry.</li>
+                                    <li>Ensured uninterrupted operational monitoring of environmental variables in critical hospital facilities.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Skills Matrix & Education (5 Cols) -->
+                <div class="lg:col-span-5 space-y-6">
+                    <h2 class="text-2xl font-extrabold text-white light:text-slate-900 flex items-center gap-2">
+                        <i data-lucide="wrench" class="w-5 h-5 text-emerald-400"></i> Skills & Qualifications
+                    </h2>
+
+                    <!-- Credentials Badge Card -->
+                    <div class="p-5 rounded-2xl bg-gradient-to-br from-cyan-950/60 to-slate-900 border border-cyan-500/30 space-y-2">
+                        <div class="flex items-center gap-2 text-cyan-400 font-mono text-xs font-bold">
+                            <i data-lucide="award" class="w-4 h-4"></i> Electrical Credential
+                        </div>
+                        <h4 class="text-sm font-bold text-white">Electrical Appliance Serviceperson (EAS)</h4>
+                        <p class="text-xs font-mono text-slate-400">Credential ID: EAS-TLC 154510</p>
+                    </div>
+
+                    <!-- Education Stack -->
+                    <div class="glass-card p-6 rounded-2xl space-y-4">
+                        <h3 class="font-bold text-sm text-slate-200 light:text-slate-800 uppercase tracking-wider font-mono">Education</h3>
+                        
+                        <div class="space-y-3 divide-y divide-slate-800 light:divide-slate-200">
+                            <div class="pt-2">
+                                <h4 class="text-xs font-bold text-white light:text-slate-900">BSc(Eng) Biomedical Engineering</h4>
+                                <p class="text-[11px] text-slate-400">Instituto Tecnológico Metropolitano (ITM), Colombia (2012 - 2017)</p>
+                            </div>
+                            <div class="pt-3">
+                                <h4 class="text-xs font-bold text-white light:text-slate-900">Diploma Level 7 in Technology Management</h4>
+                                <p class="text-[11px] text-slate-400">Aspire2 International, New Zealand (2017 - 2018)</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Skills Matrix Tags -->
+                    <div class="glass-card p-6 rounded-2xl space-y-4">
+                        <h3 class="font-bold text-sm text-slate-200 light:text-slate-800 uppercase tracking-wider font-mono">Technical Competencies</h3>
+                        
+                        <div class="flex flex-wrap gap-2 text-xs font-mono">
+                            <span class="px-2.5 py-1 rounded-lg bg-cyan-500/10 text-cyan-300 border border-cyan-500/20">Medical Devices</span>
+                            <span class="px-2.5 py-1 rounded-lg bg-cyan-500/10 text-cyan-300 border border-cyan-500/20">Signal Processing</span>
+                            <span class="px-2.5 py-1 rounded-lg bg-emerald-500/10 text-emerald-300 border border-emerald-500/20">MATLAB</span>
+                            <span class="px-2.5 py-1 rounded-lg bg-emerald-500/10 text-emerald-300 border border-emerald-500/20">sEMG Analysis</span>
+                            <span class="px-2.5 py-1 rounded-lg bg-blue-500/10 text-blue-300 border border-blue-500/20">Arduino / PCB Design</span>
+                            <span class="px-2.5 py-1 rounded-lg bg-blue-500/10 text-blue-300 border border-blue-500/20">Fusion 360</span>
+                            <span class="px-2.5 py-1 rounded-lg bg-slate-800 text-slate-300">LabChart / PowerLab</span>
+                            <span class="px-2.5 py-1 rounded-lg bg-slate-800 text-slate-300">Electrical Safety Testing</span>
+                            <span class="px-2.5 py-1 rounded-lg bg-slate-800 text-slate-300">LaTeX / C++</span>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
     </main>
 
-    <footer>
-        <div class="contenedor-footer">
-            <div class="content-foo">
-                <!-- <h4>Phone</h4> -->
-                <p>+64 226795579</p>
-            </div>
-            <div class="content-foo">
-                <!-- <h4>Email</h4> -->
-                <p>santiago.cadavid94@gmail.com</p>
-            </div>
-            <div class="content-foo">
-                <!-- <h4>Location</h4> -->
-                <p>New Zealand</p>
+    <!-- Project Details Modal Container -->
+    <div id="projectModal" class="fixed inset-0 z-50 hidden bg-slate-950/80 backdrop-blur-md overflow-y-auto flex items-center justify-center p-4">
+        <div class="relative w-full max-w-2xl bg-brand-navy light:bg-white border border-slate-800 light:border-slate-300 rounded-3xl p-6 sm:p-8 space-y-6 shadow-2xl my-auto">
+            <button onclick="closeProjectModal()" class="absolute top-5 right-5 p-2 rounded-full hover:bg-slate-800 text-slate-400 hover:text-white transition">
+                <i data-lucide="x" class="w-5 h-5"></i>
+            </button>
+            <div id="modalContent">
+                <!-- Dynamic Modal Content populated by JS -->
             </div>
         </div>
-        <h2 class="titulo-final">&copy; Santiago Cadavid</h2>
-    </footer>
-</body>
+    </div>
 
+    <!-- Notification Toast -->
+    <div id="toast" class="fixed bottom-6 right-6 z-50 hidden bg-cyan-500 text-slate-950 px-4 py-3 rounded-2xl shadow-xl font-mono text-xs font-bold flex items-center space-x-2">
+        <i data-lucide="check-circle" class="w-4 h-4"></i>
+        <span id="toastMessage">Copied to clipboard!</span>
+    </div>
+
+    <!-- Footer -->
+    <footer class="mt-20 border-t border-slate-800 light:border-slate-200 bg-brand-navy/80 light:bg-white/80 py-8 text-xs text-slate-500 font-mono">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div class="flex items-center space-x-2">
+                <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+                <span>Santiago Cadavid © 2026 — Christchurch, NZ</span>
+            </div>
+            <div class="flex items-center space-x-4">
+                <a href="mailto:santiago.cadavid94@gmail.com" class="hover:text-cyan-400 transition">Email</a>
+                <a href="https://linkedin.com/in/santiago-cadavis" target="_blank" class="hover:text-cyan-400 transition">LinkedIn</a>
+                <a href="https://cadavis8.github.io/" target="_blank" class="hover:text-cyan-400 transition">GitHub</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive Script Logic -->
+    <script>
+        // Tab Navigation State
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
+            document.getElementById(`tab-${tabId}`).classList.remove('hidden');
+
+            document.querySelectorAll('.nav-tab').forEach(btn => {
+                btn.classList.remove('text-cyan-400', 'bg-cyan-500/10', 'font-semibold');
+                btn.classList.add('text-slate-300');
+            });
+
+            const activeBtn = document.getElementById(`nav-${tabId}`);
+            if (activeBtn) {
+                activeBtn.classList.add('text-cyan-400', 'bg-cyan-500/10', 'font-semibold');
+                activeBtn.classList.remove('text-slate-300');
+            }
+
+            // Close mobile menu if open
+            document.getElementById('mobileMenu').classList.add('hidden');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function toggleMobileMenu() {
+            document.getElementById('mobileMenu').classList.toggle('hidden');
+        }
+
+        // Theme Switcher Logic
+        function toggleTheme() {
+            document.documentElement.classList.toggle('dark');
+            document.documentElement.classList.toggle('light');
+            localStorage.setItem('sc_theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light');
+        }
+
+        if (localStorage.getItem('sc_theme') === 'light') {
+            document.documentElement.classList.remove('dark');
+            document.documentElement.classList.add('light');
+        }
+
+        // Project Filter Logic
+        function filterProjects(cat) {
+            document.querySelectorAll('.proj-filter').forEach(btn => {
+                btn.classList.remove('bg-cyan-500', 'text-slate-950', 'font-bold');
+                btn.classList.add('bg-slate-800', 'text-slate-300');
+            });
+            event.target.classList.add('bg-cyan-500', 'text-slate-950', 'font-bold');
+            event.target.classList.remove('bg-slate-800', 'text-slate-300');
+
+            document.querySelectorAll('.project-card').forEach(card => {
+                if (cat === 'all' || card.getAttribute('data-category') === cat) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // Publications Live Search Filter
+        function filterPublications() {
+            const query = document.getElementById('pubSearchInput').value.toLowerCase();
+            document.querySelectorAll('.pub-item').forEach(item => {
+                const text = item.innerText.toLowerCase();
+                item.style.display = text.includes(query) ? 'block' : 'none';
+            });
+        }
+
+        // Project Modals Data
+        const projectDetails = {
+            ventilator: {
+                title: "MATLAB Mechanical Ventilator Simulator (LungLife)",
+                category: "COVID-19 Non-Profit Clinical Simulation",
+                tags: ["MATLAB", "Volume Control Ventilation", "Fluid Dynamics"],
+                body: `
+                    <p class="text-sm text-slate-300 light:text-slate-600 leading-relaxed">
+                        During the 2020 pandemic, Santiago joined <strong>LungLife</strong>—a multidisciplinary non-profit team of anesthesiologists, respiratory therapists, and engineers aiming to design a low-cost mechanical ventilation system for public health institutions in Colombia and Mexico.
+                    </p>
+                    <h4 class="font-bold text-sm text-white pt-2">Key Technical Achievements:</h4>
+                    <ul class="list-disc list-inside text-xs text-slate-300 space-y-1">
+                        <li>Simulated Volume Control Ventilation (VCV) where flow and tidal volume are controlled variables to determine airway pressure dynamics.</li>
+                        <li>Configured inputs for PEEP, I:E ratio, respiratory rate (RPM), and FiO2.</li>
+                        <li>Modeled pressure-volume loops to assist clinicians in visualizing patient lung compliance.</li>
+                    </ul>
+                `
+            },
+            semg: {
+                title: "sEMG Swallowing Disorder Diagnostics (GI2B Research)",
+                category: "COLCIENCIAS Sponsored Research",
+                tags: ["sEMG", "PowerLab", "Discrete Wavelet Transform", "Machine Learning"],
+                body: `
+                    <p class="text-sm text-slate-300 light:text-slate-600 leading-relaxed">
+                        Developed in partnership with the <strong>GI2B research group</strong> at ITM. The research evaluated surface electromyography signals in over 700 healthy individuals and stroke/Parkinson's patients with dysphagia.
+                    </p>
+                    <h4 class="font-bold text-sm text-white pt-2">Key Technical Achievements:</h4>
+                    <ul class="list-disc list-inside text-xs text-slate-300 space-y-1">
+                        <li>Optimized electrode configurations to maximize signal-to-noise ratio during infrahyoid muscle activation.</li>
+                        <li>Implemented discrete wavelet transform (DWT) and bandpass digital filtering to automatically identify burst onset.</li>
+                        <li>Co-authored 3 research papers published in JEK and CLAIB conference proceedings.</li>
+                    </ul>
+                `
+            },
+            prosthesis: {
+                title: "3D Printed Myoelectric Prosthetic Arm",
+                category: "Embedded Microcontrollers & Robotics",
+                tags: ["Arduino", "Fusion 360", "Myo Armband", "3D Printing"],
+                body: `
+                    <p class="text-sm text-slate-300 light:text-slate-600 leading-relaxed">
+                        Created as a practical demo platform for university bioinstrumentation workshops. Integrates 3D printed mechanical phalanges with servo motors and real-time sEMG pattern recognition.
+                    </p>
+                    <h4 class="font-bold text-sm text-white pt-2">Key Technical Achievements:</h4>
+                    <ul class="list-disc list-inside text-xs text-slate-300 space-y-1">
+                        <li>Designed custom joint linkages using Autodesk Fusion 360.</li>
+                        <li>Interfaced a commercial 8-channel Myo armband via Bluetooth to an Arduino controller.</li>
+                        <li>Demonstrated hand gesture recognition for prosthetic motor actuation.</li>
+                    </ul>
+                `
+            }
+        };
+
+        function openProjectModal(key) {
+            const data = projectDetails[key];
+            if (!data) return;
+
+            document.getElementById('modalContent').innerHTML = `
+                <div class="space-y-4">
+                    <span class="text-xs font-mono px-2.5 py-0.5 rounded bg-cyan-500/20 text-cyan-300">${data.category}</span>
+                    <h3 class="text-2xl font-bold text-white light:text-slate-900">${data.title}</h3>
+                    <div class="flex flex-wrap gap-2 text-[11px] font-mono text-slate-400">
+                        ${data.tags.map(t => `<span class="bg-slate-800 px-2 py-0.5 rounded">${t}</span>`).join('')}
+                    </div>
+                    <div class="pt-2 border-t border-slate-800 space-y-3">
+                        ${data.body}
+                    </div>
+                </div>
+            `;
+            document.getElementById('projectModal').classList.remove('hidden');
+        }
+
+        function closeProjectModal() {
+            document.getElementById('projectModal').classList.add('hidden');
+        }
+
+        // Toast Helper
+        function copyContact(text, msg) {
+            document.execCommand('copy');
+            const toast = document.getElementById('toast');
+            document.getElementById('toastMessage').innerText = msg;
+            toast.classList.remove('hidden');
+            setTimeout(() => toast.classList.add('hidden'), 2500);
+        }
+
+        // Canvas Bio-Signal Generator
+        const canvas = document.getElementById('signalCanvas');
+        const ctx = canvas.getContext('2d');
+        let currentWave = 'semg';
+        let step = 0;
+
+        function setWaveform(type) {
+            currentWave = type;
+            document.querySelectorAll('.wave-btn').forEach(b => {
+                b.classList.remove('bg-cyan-500', 'text-slate-950', 'font-bold');
+                b.classList.add('bg-slate-800', 'text-slate-300');
+            });
+            event.target.classList.add('bg-cyan-500', 'text-slate-950', 'font-bold');
+            event.target.classList.remove('bg-slate-800', 'text-slate-300');
+
+            const labels = { semg: 'sEMG Burst Signal', ecg: 'ECG Heart Pulse', ventilator: 'Ventilator Airflow Curve' };
+            document.getElementById('waveTypeLabel').innerText = labels[type];
+        }
+
+        function drawWaveform() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            
+            // Draw grid lines
+            ctx.strokeStyle = '#1e293b';
+            ctx.lineWidth = 1;
+            for (let x = 0; x < canvas.width; x += 30) {
+                ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, canvas.height); ctx.stroke();
+            }
+            for (let y = 0; y < canvas.height; y += 30) {
+                ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(canvas.width, y); ctx.stroke();
+            }
+
+            // Draw Signal Line
+            ctx.beginPath();
+            ctx.lineWidth = 2;
+            ctx.strokeStyle = currentWave === 'semg' ? '#00E5FF' : (currentWave === 'ecg' ? '#10B981' : '#38BDF8');
+
+            const midY = canvas.height / 2;
+
+            for (let x = 0; x < canvas.width; x++) {
+                let y = midY;
+                const t = (x + step) * 0.05;
+
+                if (currentWave === 'semg') {
+                    // Simulated electromyography burst noise
+                    const isBurst = Math.sin(t * 0.3) > 0.3;
+                    const noise = isBurst ? (Math.random() - 0.5) * 50 : (Math.random() - 0.5) * 8;
+                    y = midY + noise;
+                } else if (currentWave === 'ecg') {
+                    // Simulated ECG wave
+                    const cycle = (x + step * 2) % 120;
+                    if (cycle > 50 && cycle < 55) y = midY - 15; // P wave
+                    else if (cycle >= 55 && cycle < 60) y = midY + 10; // Q
+                    else if (cycle >= 60 && cycle < 68) y = midY - 60; // R peak
+                    else if (cycle >= 68 && cycle < 74) y = midY + 20; // S
+                    else if (cycle >= 85 && cycle < 100) y = midY - 20; // T wave
+                    else y = midY + (Math.random() - 0.5) * 2;
+                } else if (currentWave === 'ventilator') {
+                    // Simulated ventilation pressure
+                    const cycle = (x + step * 1.5) % 150;
+                    if (cycle < 60) y = midY - Math.sin((cycle / 60) * Math.PI) * 45; // Inspiration
+                    else y = midY + Math.exp(-(cycle - 60) * 0.05) * 10; // Expiration
+                }
+
+                if (x === 0) ctx.moveTo(x, y);
+                else ctx.lineTo(x, y);
+            }
+            ctx.stroke();
+
+            step += 2;
+            requestAnimationFrame(drawWaveform);
+        }
+
+        window.onload = function() {
+            lucide.createIcons();
+            drawWaveform();
+        };
+    </script>
+</body>
 </html>
