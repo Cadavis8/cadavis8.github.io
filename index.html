@@ -101,23 +101,23 @@
                     <button onclick="switchTab('home')" id="nav-home" class="nav-tab px-3.5 py-2 rounded-lg text-cyan-400 bg-cyan-500/10 font-semibold transition-all flex items-center gap-2">
                         <i data-lucide="user" class="w-4 h-4"></i> About
                     </button>
-                    <button onclick="switchTab('projects')" id="nav-projects" class="nav-tab px-3.5 py-2 rounded-lg text-slate-300 light:text-slate-600 hover:text-white hover:bg-slate-800/50 light:hover:bg-slate-200 transition-all flex items-center gap-2">
-                        <i data-lucide="cpu" class="w-4 h-4"></i> Projects
+                    <button onclick="switchTab('experience')" id="nav-experience" class="nav-tab px-3.5 py-2 rounded-lg text-slate-300 light:text-slate-600 hover:text-white hover:bg-slate-800/50 light:hover:bg-slate-200 transition-all flex items-center gap-2">
+                        <i data-lucide="briefcase" class="w-4 h-4"></i> CV & Experience
                     </button>
                     <button onclick="switchTab('publications')" id="nav-publications" class="nav-tab px-3.5 py-2 rounded-lg text-slate-300 light:text-slate-600 hover:text-white hover:bg-slate-800/50 light:hover:bg-slate-200 transition-all flex items-center gap-2">
                         <i data-lucide="file-text" class="w-4 h-4"></i> Publications
                     </button>
-                    <button onclick="switchTab('experience')" id="nav-experience" class="nav-tab px-3.5 py-2 rounded-lg text-slate-300 light:text-slate-600 hover:text-white hover:bg-slate-800/50 light:hover:bg-slate-200 transition-all flex items-center gap-2">
-                        <i data-lucide="briefcase" class="w-4 h-4"></i> CV & Experience
+                    <button onclick="switchTab('projects')" id="nav-projects" class="nav-tab px-3.5 py-2 rounded-lg text-slate-300 light:text-slate-600 hover:text-white hover:bg-slate-800/50 light:hover:bg-slate-200 transition-all flex items-center gap-2">
+                        <i data-lucide="cpu" class="w-4 h-4"></i> Projects
                     </button>
                 </nav>
 
                 <!-- Action Controls (Theme Switcher & Contact CV) -->
                 <div class="flex items-center space-x-3">
-                    <button onclick="toggleTheme()" class="p-2.5 rounded-xl border border-slate-800 light:border-slate-200 bg-slate-900/60 light:bg-white text-slate-300 light:text-slate-700 hover:text-cyan-400 transition" aria-label="Toggle Dark/Light Mode">
+                    <!-- <button onclick="toggleTheme()" class="p-2.5 rounded-xl border border-slate-800 light:border-slate-200 bg-slate-900/60 light:bg-white text-slate-300 light:text-slate-700 hover:text-cyan-400 transition" aria-label="Toggle Dark/Light Mode">
                         <i data-lucide="sun" class="w-4 h-4 hidden dark:block text-amber-400"></i>
                         <i data-lucide="moon" class="w-4 h-4 block dark:hidden text-slate-700"></i>
-                    </button>
+                    </button> -->
                     
                     <a href="https://cadavis8.github.io/CV_Santiago_Cadavid.pdf" target="_blank" class="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-bold font-mono bg-gradient-to-r from-cyan-500 to-emerald-500 text-slate-950 hover:opacity-90 transition shadow-md shadow-cyan-500/10">
                         <i data-lucide="download" class="w-3.5 h-3.5"></i> Download CV
@@ -161,7 +161,7 @@
                 <div class="lg:col-span-7 space-y-6">
                     <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-xs font-mono">
                         <span class="w-2 h-2 rounded-full bg-cyan-400 animate-ping"></span>
-                        <span>Based in Christchurch, New Zealand 🇳🇿</span>
+                        <span>Based in New Zealand 🇳🇿</span>
                     </div>
 
                     <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-white light:text-slate-900 leading-tight">
@@ -176,11 +176,11 @@
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2 text-xs font-mono text-slate-400">
                         <div class="flex items-center gap-2.5 p-3 rounded-xl glass-card">
                             <i data-lucide="shield-check" class="w-4 h-4 text-emerald-400"></i>
-                            <span>Credential ID: <strong class="text-white light:text-slate-900">Electrical Appliance Serviceperson (EAS) / EW154510</strong></span>
+                            <span>Credentials: <strong class="text-white light:text-slate-900">Electrical Appliance Serviceperson (EAS)</strong></span>
                         </div>
                         <div class="flex items-center gap-2.5 p-3 rounded-xl glass-card">
                             <i data-lucide="activity" class="w-4 h-4 text-cyan-400"></i>
-                            <span>Specialty: <strong class="text-white light:text-slate-900">Postgraduate Diploma in Science in Medical Physics</strong></span>
+                            <span>Specialty: <strong class="text-white light:text-slate-900">PGDipSc in Science - Medical Physics</strong></span>
                         </div>
                     </div>
 
@@ -189,9 +189,9 @@
                         <button onclick="copyContact('santiago.cadavid94@gmail.com', 'Email address copied!')" class="px-5 py-3 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold text-xs uppercase tracking-wider font-mono flex items-center gap-2 transition shadow-lg shadow-cyan-500/20">
                             <i data-lucide="mail" class="w-4 h-4"></i> Copy Email
                         </button>
-                        <button onclick="switchTab('projects')" class="px-5 py-3 rounded-xl border border-slate-700 light:border-slate-300 hover:border-cyan-400 text-slate-200 light:text-slate-700 hover:text-cyan-400 font-bold text-xs uppercase tracking-wider font-mono flex items-center gap-2 transition">
+                        <!-- <button onclick="switchTab('projects')" class="px-5 py-3 rounded-xl border border-slate-700 light:border-slate-300 hover:border-cyan-400 text-slate-200 light:text-slate-700 hover:text-cyan-400 font-bold text-xs uppercase tracking-wider font-mono flex items-center gap-2 transition">
                             <i data-lucide="code" class="w-4 h-4"></i> Explore Projects
-                        </button>
+                        </button> -->
                         <a href="https://linkedin.com/in/santiago-cadavis" target="_blank" class="p-3 rounded-xl border border-slate-800 light:border-slate-200 text-slate-400 hover:text-cyan-400 transition" title="LinkedIn Profile">
                             <i data-lucide="linkedin" class="w-4 h-4"></i> LinkedIn
                         </a>
@@ -239,27 +239,27 @@
                     </div>
                     <h3 class="font-bold text-lg text-white light:text-slate-900">Field Engineering</h3>
                     <p class="text-xs text-slate-400 light:text-slate-600 leading-relaxed">
-                        Extensive hands-on experience in clinical environments (BV Medical, New Zealand), performing preventive maintenance, performance assurance, electrical safety testing, and troubleshooting critical medical hardware.
+                        Extensive hands-on experience in clinical environments (BV Medical, New Zealand), performing preventive maintenance, performance assurance, electrical safety testing, and troubleshooting medical hardware.
                     </p>
                 </div>
 
                 <div class="glass-card p-6 rounded-2xl space-y-3 border-t-2 border-t-emerald-400">
                     <div class="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center">
-                        <i data-lucide="cpu" class="w-5 h-5"></i>
+                        <i data-lucide="graduation-cap" class="w-5 h-5"></i>
                     </div>
-                    <h3 class="font-bold text-lg text-white light:text-slate-900">Previous Work Expecirence</h3>
+                    <h3 class="font-bold text-lg text-white light:text-slate-900">Research & Academic</h3>
                     <p class="text-xs text-slate-400 light:text-slate-600 leading-relaxed">
-                        Embedded Hardware & Telemetry: Proficient with open-source microcontroller prototyping (Arduino, STM32), custom PCB design, 3D mechanical modeling (Fusion 360), and hospital enviroment sensor telemetry (temperature, dew point, gas concentration).
+                        Former research fellow at ITM (GI2B group), investigating swallowing disorder diagnosis with sEMG & Machine Learning. Holds a Diploma in Technology Management and a Postgraduate in Medical Physics, both from New Zealand.
                     </p>
                 </div>
 
                 <div class="glass-card p-6 rounded-2xl space-y-3 border-t-2 border-t-blue-500">
                     <div class="w-10 h-10 rounded-xl bg-blue-500/10 text-blue-400 flex items-center justify-center">
-                        <i data-lucide="graduation-cap" class="w-5 h-5"></i>
+                        <i data-lucide="cpu" class="w-5 h-5"></i>
                     </div>
-                    <h3 class="font-bold text-lg text-white light:text-slate-900">Research & Academic</h3>
+                    <h3 class="font-bold text-lg text-white light:text-slate-900">Previous Work Experience</h3>
                     <p class="text-xs text-slate-400 light:text-slate-600 leading-relaxed">
-                        Former research fellow at ITM (GI2B group), investigating swallowing disorder diagnosis with sEMG & Machine Learning. Holds a Diploma in Technology Management and a Postgraduate Diploma in Science in Medical Physics, both from New Zealand.
+                        Open-source microcontroller prototyping (Arduino, STM32), custom PCB design, 3D modeling, and hospital enviroment sensor telemetry (temperature, dew point, gas concentration).
                     </p>
                 </div>
 
@@ -299,12 +299,12 @@
                                 Mechanical Ventilator Simulator (LungLife)
                             </h3>
                             <p class="text-xs text-slate-400 light:text-slate-600 line-clamp-3 leading-relaxed">
-                                Developed during COVID-19 with a non-profit cross-functional team (LungLife). Built a MATLAB simulator modeling Volume Control Ventilation (VCV), calculating real-time pressure, airflow, and volume parameters to assist clinical decision-making.
+                                Developed during COVID-19 with a non-profit cross-functional team (LungLife). Built a MATLAB simulator modeling Volume Control Ventilation (VCV), calculating real-time pressure, airflow, and volume parameters to create a low-cost ventilator.
                             </p>
                         </div>
                     </div>
                     <div class="p-6 pt-0 flex items-center justify-between">
-                        <span class="text-[10px] font-mono text-slate-500">MATLAB • Bio-Fluid Mechanics</span>
+                        <span class="text-[10px] font-mono text-slate-500">MATLAB • Signal simulation</span>
                         <button onclick="openProjectModal('ventilator')" class="text-xs font-mono font-bold text-cyan-400 hover:underline flex items-center gap-1">
                             Details <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
                         </button>
@@ -328,7 +328,7 @@
                         </div>
                     </div>
                     <div class="p-6 pt-0 flex items-center justify-between">
-                        <span class="text-[10px] font-mono text-slate-500">PowerLab • Wavelet Analysis</span>
+                        <span class="text-[10px] font-mono text-slate-500">Wavelet Analysis • Machine Learning</span>
                         <button onclick="openProjectModal('semg')" class="text-xs font-mono font-bold text-emerald-400 hover:underline flex items-center gap-1">
                             Details <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
                         </button>
@@ -347,7 +347,7 @@
                                 3D Printed Myoelectric Prosthetic Hand
                             </h3>
                             <p class="text-xs text-slate-400 light:text-slate-600 line-clamp-3 leading-relaxed">
-                                Built an operational robotic prosthesis designed with Fusion 360, 3D printed, and controlled in real-time via Arduino microcontrollers paired with a commercial Myo gesture sEMG armband for educational workshops.
+                                Built an operational robotic prosthesis designed with 3D modeling software, 3D printed, and controlled in real-time via Arduino microcontrollers and with a commercial Myo gesture sEMG armband, for educational workshops.
                             </p>
                         </div>
                     </div>
@@ -411,7 +411,7 @@
                         <strong class="text-slate-300 light:text-slate-700">Cadavid-Arboleda, Santiago et al.</strong> — <em>VII Latin American Congress on Biomedical Engineering CLAIB 2016</em>, Springer, pp. 165-168.
                     </p>
                     <div class="flex items-center space-x-4 pt-2 text-xs font-mono">
-                        <a href="http://link.springer.com/10.1007/978-981-10-4086-3" target="_blank" class="text-emerald-400 hover:underline flex items-center gap-1">
+                        <a href="https://link.springer.com/chapter/10.1007/978-981-10-4086-3_42" target="_blank" class="text-emerald-400 hover:underline flex items-center gap-1">
                             <i data-lucide="external-link" class="w-3.5 h-3.5"></i> DOI: 10.1007/978-981-10-4086-3
                         </a>
                     </div>
@@ -430,7 +430,7 @@
                         <strong class="text-slate-300 light:text-slate-700">Cantillo-Mackenzie, German; Cadavid-Arboleda, Santiago et al.</strong> — <em>VII Latin American Congress on Biomedical Engineering CLAIB 2016</em>, Springer, pp. 221-224.
                     </p>
                     <div class="flex items-center space-x-4 pt-2 text-xs font-mono">
-                        <a href="http://link.springer.com/10.1007/978-981-10-4086-3" target="_blank" class="text-blue-400 hover:underline flex items-center gap-1">
+                        <a href="https://link.springer.com/chapter/10.1007/978-981-10-4086-3_56" target="_blank" class="text-blue-400 hover:underline flex items-center gap-1">
                             <i data-lucide="external-link" class="w-3.5 h-3.5"></i> DOI: 10.1007/978-981-10-4086-3
                         </a>
                     </div>
@@ -449,6 +449,11 @@
                     <h2 class="text-2xl font-extrabold text-white light:text-slate-900 flex items-center gap-2">
                         <i data-lucide="history" class="w-5 h-5 text-cyan-400"></i> Career History
                     </h2>
+                    <p></p>
+                    <a href="https://linkedin.com/in/santiago-cadavis" target="_blank" class="p-3 rounded-xl border border-slate-800 light:border-slate-200 text-slate-400 hover:text-cyan-400 transition" title="LinkedIn Profile">
+                        <i data-lucide="linkedin" class="w-4 h-4"></i> LinkedIn
+                    </a>
+
 
                     <!-- Experience Timeline Nodes -->
                     <div class="relative border-l-2 border-slate-800 light:border-slate-300 ml-3 pl-6 space-y-8">
@@ -459,13 +464,13 @@
                             <div class="glass-card p-6 rounded-2xl space-y-2">
                                 <div class="flex flex-wrap items-center justify-between gap-1 text-xs font-mono">
                                     <span class="text-cyan-400 font-bold">October 2020 — Present</span>
-                                    <span class="text-slate-400">Christchurch, NZ 🇳🇿</span>
+                                    <span class="text-slate-400">Christchurch, New Zealand</span>
                                 </div>
                                 <h3 class="font-bold text-lg text-white light:text-slate-900">Regional Manager / Biomedical Engineer</h3>
                                 <p class="text-xs font-mono text-slate-400">BV Medical</p>
                                 <ul class="text-xs text-slate-300 light:text-slate-600 space-y-1.5 pt-2 list-disc list-inside leading-relaxed">
-                                    <li>Performs preventive maintenance, equipment calibrations, and electrical safety testing on complex clinical systems across regional medical centers.</li>
-                                    <li>Instructs clinical staff on proper operation, safe handling, and basic maintenance procedures for critical devices.</li>
+                                    <li>Performs preventive maintenance, equipment calibrations, and electrical safety testing on clinical systems across regional medical centers.</li>
+                                    <li>Instructs clinical staff on proper operation, safe handling, and basic maintenance procedures for day-to-day devices.</li>
                                     <li>Executes component-level equipment diagnostics using specialized test instrumentation and software revisions.</li>
                                 </ul>
                             </div>
@@ -477,12 +482,12 @@
                             <div class="glass-card p-6 rounded-2xl space-y-2">
                                 <div class="flex flex-wrap items-center justify-between gap-1 text-xs font-mono">
                                     <span class="text-slate-400 font-bold">August 2018 — October 2020</span>
-                                    <span class="text-slate-400">New Zealand</span>
+                                    <span class="text-slate-400">Auckland, New Zealand</span>
                                 </div>
                                 <h3 class="font-bold text-lg text-white light:text-slate-900">Assistant Manager</h3>
                                 <p class="text-xs font-mono text-slate-400">MK RD Limited</p>
                                 <p class="text-xs text-slate-300 light:text-slate-600 leading-relaxed">
-                                    Assisted operational oversight, inventory management, and technical compliance in a commercial setting while pursuing technology management studies.
+                                    Assisted operational oversight and inventory management in a commercial setting while pursuing technology management studies.
                                 </p>
                             </div>
                         </div>
@@ -493,12 +498,12 @@
                             <div class="glass-card p-6 rounded-2xl space-y-2">
                                 <div class="flex flex-wrap items-center justify-between gap-1 text-xs font-mono">
                                     <span class="text-emerald-400 font-bold">January 2017 — June 2017</span>
-                                    <span class="text-slate-400">Auckland, NZ & Colombia</span>
+                                    <span class="text-slate-400">Medellin, Colombia</span>
                                 </div>
                                 <h3 class="font-bold text-lg text-white light:text-slate-900">Field Service Engineer</h3>
                                 <p class="text-xs font-mono text-slate-400">Iforware S.A.S.</p>
                                 <ul class="text-xs text-slate-300 light:text-slate-600 space-y-1.5 pt-2 list-disc list-inside leading-relaxed">
-                                    <li>Designed and assembled micro-controller hardware (Arduino, custom PCBs) and telemetry sensors (temperature, dew point, humidity, gas concentration) for hospital and laboratory telemetry.</li>
+                                    <li>Designed and assembled micro-controller hardware (Arduino, custom PCBs) and telemetry sensors systems (temperature, dew point, humidity, gas concentration) for hospital and laboratory settings.</li>
                                     <li>Ensured uninterrupted operational monitoring of environmental variables in critical hospital facilities.</li>
                                 </ul>
                             </div>
@@ -519,7 +524,7 @@
                             <i data-lucide="award" class="w-4 h-4"></i> Electrical Credential
                         </div>
                         <h4 class="text-sm font-bold text-white">Electrical Appliance Serviceperson (EAS)</h4>
-                        <p class="text-xs font-mono text-slate-400">Credential ID: EAS-TLC 154510</p>
+                        <p class="text-xs font-mono text-slate-400">Credential ID: EW154510</p>
                     </div>
 
                     <!-- Education Stack -->
@@ -528,12 +533,16 @@
                         
                         <div class="space-y-3 divide-y divide-slate-800 light:divide-slate-200">
                             <div class="pt-2">
-                                <h4 class="text-xs font-bold text-white light:text-slate-900">BSc(Eng) Biomedical Engineering</h4>
-                                <p class="text-[11px] text-slate-400">Instituto Tecnológico Metropolitano (ITM), Colombia (2012 - 2017)</p>
+                                <h4 class="text-xs font-bold text-white light:text-slate-900">Postgraduate Diploma in Science in Medical Physics</h4>
+                                <p class="text-[11px] text-slate-400">University of Canterbury, New Zealand (2024 - 2026)</p>
                             </div>
-                            <div class="pt-3">
+                            <div class="pt-2">
                                 <h4 class="text-xs font-bold text-white light:text-slate-900">Diploma Level 7 in Technology Management</h4>
                                 <p class="text-[11px] text-slate-400">Aspire2 International, New Zealand (2017 - 2018)</p>
+                            </div>
+                            <div class="pt-3">
+                                <h4 class="text-xs font-bold text-white light:text-slate-900">BSc(Eng) Biomedical Engineering</h4>
+                                <p class="text-[11px] text-slate-400">Instituto Tecnológico Metropolitano (ITM), Colombia (2012 - 2017)</p>
                             </div>
                         </div>
                     </div>
@@ -544,14 +553,16 @@
                         
                         <div class="flex flex-wrap gap-2 text-xs font-mono">
                             <span class="px-2.5 py-1 rounded-lg bg-cyan-500/10 text-cyan-300 border border-cyan-500/20">Medical Devices</span>
-                            <span class="px-2.5 py-1 rounded-lg bg-cyan-500/10 text-cyan-300 border border-cyan-500/20">Signal Processing</span>
-                            <span class="px-2.5 py-1 rounded-lg bg-emerald-500/10 text-emerald-300 border border-emerald-500/20">MATLAB</span>
+                            <span class="px-2.5 py-1 rounded-lg bg-cyan-500/10 text-cyan-300 border border-cyan-500/20">Electrical Safety Testing | AS/NZS 3551:2012</span>
+                            <span class="px-2.5 py-1 rounded-lg bg-cyan-500/10 text-cyan-300 border border-cyan-500/20">Electrical Safety Testing | AS/NZS 3003:2018</span>
+                            <span class="px-2.5 py-1 rounded-lg bg-emerald-500/10 text-emerald-300 border border-emerald-500/20">Signal Processing</span>
                             <span class="px-2.5 py-1 rounded-lg bg-emerald-500/10 text-emerald-300 border border-emerald-500/20">sEMG Analysis</span>
-                            <span class="px-2.5 py-1 rounded-lg bg-blue-500/10 text-blue-300 border border-blue-500/20">Arduino / PCB Design</span>
-                            <span class="px-2.5 py-1 rounded-lg bg-blue-500/10 text-blue-300 border border-blue-500/20">Fusion 360</span>
-                            <span class="px-2.5 py-1 rounded-lg bg-slate-800 text-slate-300">LabChart / PowerLab</span>
-                            <span class="px-2.5 py-1 rounded-lg bg-slate-800 text-slate-300">Electrical Safety Testing</span>
-                            <span class="px-2.5 py-1 rounded-lg bg-slate-800 text-slate-300">LaTeX / C++</span>
+                            <span class="px-2.5 py-1 rounded-lg bg-emerald-500/10 text-emerald-300 border border-emerald-500/20">MATLAB</span>
+                            <span class="px-2.5 py-1 rounded-lg bg-blue-500/10 text-blue-300 border border-blue-500/20">Arduino</span>
+                            <span class="px-2.5 py-1 rounded-lg bg-blue-500/10 text-blue-300 border border-blue-500/20">3D Modeling</span>
+                            <span class="px-2.5 py-1 rounded-lg bg-blue-500/10 text-blue-300 border border-blue-500/20">Basic Coding</span>
+                            <span class="px-2.5 py-1 rounded-lg bg-slate-800 text-slate-300">LaTeX</span>
+                            <span class="px-2.5 py-1 rounded-lg bg-slate-800 text-slate-300">Microsoft Office</span>
                         </div>
                     </div>
 
@@ -591,7 +602,7 @@
             <div class="flex items-center space-x-4">
                 <a href="mailto:santiago.cadavid94@gmail.com" class="hover:text-cyan-400 transition">Email</a>
                 <a href="https://linkedin.com/in/santiago-cadavis" target="_blank" class="hover:text-cyan-400 transition">LinkedIn</a>
-                <a href="https://cadavis8.github.io/" target="_blank" class="hover:text-cyan-400 transition">GitHub</a>
+                <!-- <a href="https://cadavis8.github.io/" target="_blank" class="hover:text-cyan-400 transition">GitHub</a> -->
             </div>
         </div>
     </footer>
