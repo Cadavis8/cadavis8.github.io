@@ -273,7 +273,7 @@
             <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
                 <div>
                     <h2 class="text-2xl sm:text-3xl font-extrabold text-white light:text-slate-900">Engineering & Biomedical Projects</h2>
-                    <p class="text-xs sm:text-sm text-slate-400">Innovative medical hardware, signal analysis software, and open-source prototypes.</p>
+                    <p class="text-xs sm:text-sm text-slate-400">Academic / Personal projects</p>
                 </div>
 
                 <!-- Project Filter Tags -->
@@ -297,10 +297,10 @@
                         </div>
                         <div class="p-6 space-y-3">
                             <h3 class="font-bold text-lg text-white light:text-slate-900 group-hover:text-cyan-400 transition-colors">
-                                Mechanical Ventilator Simulator (LungLife)
+                                Mechanical Ventilator Simulator
                             </h3>
                             <p class="text-xs text-slate-400 light:text-slate-600 line-clamp-3 leading-relaxed">
-                                Developed during COVID-19 with a non-profit cross-functional team (LungLife). Built a MATLAB simulator modeling Volume Control Ventilation (VCV), calculating real-time pressure, airflow, and volume parameters to create a low-cost ventilator.
+                                Developed during COVID-19 with a non-profit cross-functional team (LungLife). Built a MATLAB simulator modeling Volume Control Ventilation (VCV), calculating real-time pressure, airflow, and volume parameters to create a low-cost ventilator device.
                             </p>
                         </div>
                     </div>
@@ -348,12 +348,12 @@
                                 3D Printed Myoelectric Prosthetic Hand
                             </h3>
                             <p class="text-xs text-slate-400 light:text-slate-600 line-clamp-3 leading-relaxed">
-                                Built an operational robotic prosthesis designed with 3D modeling software, 3D printed, and controlled in real-time via Arduino microcontrollers and with a commercial Myo gesture sEMG armband, for educational workshops.
+                                3D printed operational robotic prosthesis controlled in real-time via Arduino microcontrollers and a commercial Myo gesture sEMG armband, for educational workshops.
                             </p>
                         </div>
                     </div>
                     <div class="p-6 pt-0 flex items-center justify-between">
-                        <span class="text-[10px] font-mono text-slate-500">Arduino • Fusion 360 • sEMG</span>
+                        <span class="text-[10px] font-mono text-slate-500">Arduino • 3D Printing • sEMG</span>
                         <button onclick="openProjectModal('prosthesis')" class="text-xs font-mono font-bold text-blue-400 hover:underline flex items-center gap-1">
                             Details <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
                         </button>
@@ -679,10 +679,13 @@
             ventilator: {
                 title: "MATLAB Mechanical Ventilator Simulator (LungLife)",
                 category: "COVID-19 Non-Profit Clinical Simulation",
-                tags: ["MATLAB", "Volume Control Ventilation", "Fluid Dynamics"],
+                tags: ["MATLAB", "Volume Control Ventilation", "Simulation"],
                 body: `
                     <p class="text-sm text-slate-300 light:text-slate-600 leading-relaxed">
-                        During the 2020 pandemic, Santiago joined <strong>LungLife</strong>—a multidisciplinary non-profit team of anesthesiologists, respiratory therapists, and engineers aiming to design a low-cost mechanical ventilation system for public health institutions in Colombia and Mexico.
+                        Developed during COVID-19 with a non-profit cross-functional team (LungLife). Built a MATLAB simulator modeling Volume Control Ventilation (VCV), calculating real-time pressure, airflow, and volume parameters to create a low-cost ventilator device. 
+                    </p>
+                    <p class="text-sm text-slate-300 light:text-slate-600 leading-relaxed">
+                        During the 2020 pandemic, Santiago joined LungLife—a multidisciplinary non-profit team of anesthesiologists, respiratory therapists, and engineers aiming to design a low-cost mechanical ventilation system for public health institutions in Colombia and Mexico. 
                     </p>
                     <h4 class="font-bold text-sm text-white pt-2">Key Technical Achievements:</h4>
                     <ul class="list-disc list-inside text-xs text-slate-300 space-y-1">
@@ -695,10 +698,13 @@
             semg: {
                 title: "sEMG Swallowing Disorder Diagnostics (GI2B Research)",
                 category: "COLCIENCIAS Sponsored Research",
-                tags: ["sEMG", "PowerLab", "Discrete Wavelet Transform", "Machine Learning"],
+                tags: ["sEMG", "PowerLab", "MATLAB", "Discrete Wavelet Transform", "Machine Learning"],
                 body: `
                     <p class="text-sm text-slate-300 light:text-slate-600 leading-relaxed">
-                        Developed in partnership with the <strong>GI2B research group</strong> at ITM. The research evaluated surface electromyography signals in over 700 healthy individuals and stroke/Parkinson's patients with dysphagia.
+                        Research project with the GI2B research group acquiring surface electromyography (sEMG) from 700+ subjects using PowerLab hardware. Utilized discrete wavelet transform and machine learning classifiers to automate burst detection in infrahyoid muscles.
+                    </p>
+                    <p class="text-sm text-slate-300 light:text-slate-600 leading-relaxed">
+                        Developed in partnership with the <strong>GI2B research group</strong> at Instituto Tecnologico Metropolitano. The research evaluated surface electromyography signals in over 700 healthy individuals and stroke/Parkinson's patients with dysphagia.
                     </p>
                     <h4 class="font-bold text-sm text-white pt-2">Key Technical Achievements:</h4>
                     <ul class="list-disc list-inside text-xs text-slate-300 space-y-1">
@@ -709,16 +715,19 @@
                 `
             },
             prosthesis: {
-                title: "3D Printed Myoelectric Prosthetic Arm",
+                title: "3D Printed Myoelectric Prosthetic Hand",
                 category: "Embedded Microcontrollers & Robotics",
-                tags: ["Arduino", "Fusion 360", "Myo Armband", "3D Printing"],
+                tags: ["Arduino", "3D Modeling", "Myo Armband", "3D Printing"],
                 body: `
+                    <p class="text-sm text-slate-300 light:text-slate-600 leading-relaxed">
+                        3D printed operational robotic prosthesis controlled in real-time via Arduino microcontrollers and a commercial Myo gesture sEMG armband, for educational workshops.
+                    </p>
                     <p class="text-sm text-slate-300 light:text-slate-600 leading-relaxed">
                         Created as a practical demo platform for university bioinstrumentation workshops. Integrates 3D printed mechanical phalanges with servo motors and real-time sEMG pattern recognition.
                     </p>
                     <h4 class="font-bold text-sm text-white pt-2">Key Technical Achievements:</h4>
                     <ul class="list-disc list-inside text-xs text-slate-300 space-y-1">
-                        <li>Designed custom joint linkages using Autodesk Fusion 360.</li>
+                        <li>Open source 3D Modeling file.</li>
                         <li>Interfaced a commercial 8-channel Myo armband via Bluetooth to an Arduino controller.</li>
                         <li>Demonstrated hand gesture recognition for prosthetic motor actuation.</li>
                     </ul>
