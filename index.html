@@ -186,8 +186,9 @@
 
                     <!-- Contact & CTA Buttons -->
                     <div class="flex flex-wrap items-center gap-4 pt-2">
-                        <button onclick="copyContact('santiago.cadavid94@gmail.com', 'Email address copied!')" class="px-5 py-3 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold text-xs uppercase tracking-wider font-mono flex items-center gap-2 transition shadow-lg shadow-cyan-500/20">
-                            <i data-lucide="mail" class="w-4 h-4"></i> Copy Email
+                        <button onclick="copyContact('santiago.cadavid94@gmail.com', this)" id="email-btn" class="px-5 py-3 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold text-xs uppercase tracking-wider font-mono flex items-center gap-2 transition shadow-lg shadow-cyan-500/20">
+                            <i data-lucide="mail" class="w-4 h-4"></i>
+                            <span class="btn-text">Copy Email</span>
                         </button>
                         <!-- <button onclick="switchTab('projects')" class="px-5 py-3 rounded-xl border border-slate-700 light:border-slate-300 hover:border-cyan-400 text-slate-200 light:text-slate-700 hover:text-cyan-400 font-bold text-xs uppercase tracking-wider font-mono flex items-center gap-2 transition">
                             <i data-lucide="code" class="w-4 h-4"></i> Explore Projects
@@ -749,12 +750,59 @@
         }
 
         // Toast Helper
-        function copyContact(text, msg) {
-            document.execCommand('copy');
-            const toast = document.getElementById('toast');
-            document.getElementById('toastMessage').innerText = msg;
-            toast.classList.remove('hidden');
-            setTimeout(() => toast.classList.add('hidden'), 2500);
+        // function copyContact(text, msg) {
+        //     document.execCommand('copy');
+        //     const toast = document.getElementById('toast');
+        //     document.getElementById('toastMessage').innerText = msg;
+        //     toast.classList.remove('hidden');
+        //     setTimeout(() => toast.classList.add('hidden'), 2500);
+        // }
+
+        function copyContact(textToCopy, buttonElement) {
+            // Fallback for modern clipboard API
+            if (navigator.clipboard && window.isSecureContext) {
+                navigator.clipboard.writeText(textToCopy).then(() => {
+                    showCopyFeedback(buttonElement);
+                }).catch(err => {
+                    fallbackCopy(textToCopy, buttonElement);
+                });
+            } else {
+                fallbackCopy(textToCopy, buttonElement);
+            }
+        }
+
+        // Fallback method for legacy browsers or unsecure HTTP contexts
+        function fallbackCopy(textToCopy, buttonElement) {
+            const textArea = document.createElement("textarea");
+            textArea.value = textToCopy;
+            textArea.style.position = "fixed";
+            textArea.style.opacity = "0";
+            document.body.appendChild(textArea);
+            textArea.focus();
+            textArea.select();
+            
+            try {
+                document.execCommand('copy');
+                showCopyFeedback(buttonElement);
+            } catch (err) {
+                console.error('Failed to copy: ', err);
+            }
+            
+            document.body.removeChild(textArea);
+        }
+
+        // Visual confirmation on the button
+        function showCopyFeedback(buttonElement) {
+            const labelSpan = buttonElement.querySelector('.btn-text');
+            const originalText = labelSpan ? labelSpan.textContent : 'Copy Email';
+
+            if (labelSpan) labelSpan.textContent = 'Copied!';
+            buttonElement.classList.add('bg-emerald-400', 'text-slate-950');
+
+            setTimeout(() => {
+                if (labelSpan) labelSpan.textContent = originalText;
+                buttonElement.classList.remove('bg-emerald-400');
+            }, 2000);
         }
 
         // Canvas Bio-Signal Generator
